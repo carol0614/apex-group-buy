@@ -71,6 +71,8 @@
   .hero-meta > div { text-align: left; }
   .hero-meta .label { font-size: 10px; letter-spacing: 0.2em; color: var(--apex-copper); text-transform: uppercase; margin-bottom: 6px; }
   .hero-meta .value { font-family: 'Noto Serif TC', serif; font-size: 15px; color: var(--ink); }
+  .hero-meta .value-big { font-family: 'Noto Serif TC', serif; font-size: clamp(20px, 3.6vw, 26px); color: var(--apex-copper-dark); font-weight: 600; letter-spacing: 0.02em; display: block; }
+  .hero-meta .value-sub { font-family: 'Noto Serif TC', serif; font-size: 11px; color: var(--ink-soft); margin-top: 4px; display: block; letter-spacing: 0.05em; }
   .countdown { display: inline-block; margin-top: 12px; padding: 10px 26px; background: var(--apex-copper); color: white; font-size: 13px; letter-spacing: 0.08em; }
   .hero-headline { font-family: 'Noto Serif TC', serif; font-size: 38px; font-weight: 700; margin: 18px 0 8px; letter-spacing: 0.04em; line-height: 1.3; }
   .hero-headline .copper { color: var(--apex-copper); }
@@ -128,6 +130,8 @@
   /* Gift box (好感獨家加贈) */
   .gift-box { margin: 32px auto 0; max-width: 580px; padding: 28px 32px; background: linear-gradient(135deg, rgba(178,120,88,0.15) 0%, rgba(178,120,88,0.05) 100%); border: 2px solid var(--apex-copper); text-align: center; }
   .gift-box .gift-label { font-family: 'Noto Serif TC', serif; font-size: 16px; color: var(--apex-copper-light); letter-spacing: 0.15em; margin-bottom: 12px; font-weight: 500; }
+  .gift-box .gift-limited { font-family: 'Noto Serif TC', serif; font-size: clamp(22px, 4.4vw, 30px); color: var(--apex-copper-light); font-weight: 600; letter-spacing: 0.08em; margin-bottom: 14px; line-height: 1.4; }
+  .gift-box .gift-limited .gift-num-big { font-family: 'Ibarra Real Nova', serif; font-size: 1.2em; color: #F4EBE0; padding: 0 4px; }
   .gift-box .gift-content { font-family: 'Noto Serif TC', serif; font-size: clamp(20px, 4vw, 26px); color: #F4EBE0; font-weight: 500; margin-bottom: 10px; line-height: 1.5; }
   .gift-box .gift-num { color: var(--apex-copper-light); font-family: 'Ibarra Real Nova', serif; font-size: 1.15em; padding: 0 4px; }
   .gift-box .gift-value { display: inline-block; padding: 6px 18px; background: var(--apex-copper); color: white; font-family: 'Ibarra Real Nova', serif; font-size: 16px; letter-spacing: 0.05em; margin-top: 6px; }
@@ -138,6 +142,8 @@
   .compare-table th { background: var(--gln-ivory); color: var(--ink); font-weight: 500; font-family: 'Noto Serif TC', serif; }
   .compare-table th:first-child, .compare-table td:first-child { text-align: left; background: #FAF8F4; color: var(--ink-soft); font-weight: 500; }
   .compare-table .highlight-cell { background: var(--gln-ivory); color: var(--apex-copper); font-weight: 500; }
+  .compare-table .bonus-cell { background: var(--apex-copper); color: white; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; }
+  .compare-table .bonus-cell .bonus-tag { display: inline-block; background: white; color: var(--apex-copper-dark); font-size: 12px; padding: 2px 8px; margin-right: 8px; font-weight: 600; letter-spacing: 0.05em; }
   .compare-table .yes { color: var(--apex-copper); font-weight: 500; }
   .compare-table .no { color: var(--ink-mute); }
 
@@ -345,6 +351,11 @@
   .line-modal-btn { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 16px 24px; background: #06C755; color: #fff; font-size: 16px; font-weight: 700; border: 0; border-radius: 10px; text-decoration: none; letter-spacing: 0.05em; box-shadow: 0 8px 20px rgba(6,199,85,0.35); transition: all 0.2s ease; }
   .line-modal-btn:hover { background: #00B14F; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(6,199,85,0.45); }
   .line-modal-btn .line-logo { background: #fff; color: #06C755; padding: 3px 10px; border-radius: 6px; font-size: 13px; font-weight: 800; letter-spacing: 0.05em; }
+  .line-modal-btn.secondary { background: #fff; color: var(--apex-copper-dark); border: 2px solid var(--apex-copper); box-shadow: 0 4px 12px rgba(178,120,88,0.18); margin-top: 12px; }
+  .line-modal-btn.secondary:hover { background: var(--gln-ivory); box-shadow: 0 8px 18px rgba(178,120,88,0.28); }
+  .line-modal-btn.secondary .line-logo { background: var(--apex-copper); color: #fff; }
+  .line-modal-btn-note { font-size: 12px; color: var(--ink-mute); margin: 6px 0 0; line-height: 1.6; }
+  .line-modal-btn-label { font-size: 11px; letter-spacing: 0.15em; color: var(--apex-copper); margin: 18px 0 8px; text-transform: uppercase; }
   .line-modal-skip { display: block; margin: 14px auto 0; background: none; border: 0; color: var(--ink-mute); font-size: 13px; cursor: pointer; font-family: inherit; }
   .line-modal-skip:hover { color: var(--ink); text-decoration: underline; }
   @media (max-width: 480px) {
@@ -402,7 +413,7 @@
     <div class="hero-meta">
       <div><div class="label">團購期</div><div class="value">2026 · 6/16 – 6/30</div></div>
       <div><div class="label">限量</div><div class="value">前 100 組</div></div>
-      <div><div class="label">優惠幅度</div><div class="value">最高省 $11,000</div></div>
+      <div><div class="label">優惠幅度</div><div><span class="value-big">最多省 $14,280</span><span class="value-sub">降價 $11,000 + 加贈 $3,280（以 AP100 計）</span></div></div>
     </div>
     <div><div class="countdown" id="countdown">⏰ 距離開團還有 — 天</div></div>
     <div><a href="#form" class="cta-btn">立即下單</a></div>
@@ -533,7 +544,8 @@
 
     <div class="gift-box">
       <div class="gift-label">🎁 好感獨家加贈</div>
-      <div class="gift-content">鋰電池 <span class="gift-num">一顆</span>・鹼性電池 <span class="gift-num">四顆</span></div>
+      <div class="gift-limited">限定前 <span class="gift-num-big">100</span> 組贈送</div>
+      <div class="gift-content">APEX 專用鋰電池 <span class="gift-num">一顆</span>・鹼性電池 <span class="gift-num">四顆</span></div>
       <div class="gift-value">價值 NT$ 3,280</div>
     </div>
   </div>
@@ -563,6 +575,7 @@
         <tr><td>雙電池系統（鋰 + 鹼性）</td><td class="yes">✓</td><td class="yes">✓</td></tr>
         <tr><td>原價</td><td>NT$ 45,000</td><td>NT$ 35,000</td></tr>
         <tr><td><strong>Carol 團購價</strong></td><td class="highlight-cell">NT$ 34,000</td><td class="highlight-cell">NT$ 26,000</td></tr>
+        <tr><td><strong>🎁 限定前 100 組加贈</strong></td><td colspan="2" class="bonus-cell"><span class="bonus-tag">前 100 組</span>APEX 專用鋰電池（價值 $3,280）</td></tr>
       </tbody>
     </table>
   </div>
@@ -1046,11 +1059,11 @@
 <section class="form-section" id="form">
   <div class="container">
     <div class="section-label">Order Form</div>
-    <h2 class="section-title">填單下訂・好感獨家優惠</h2>
+    <h2 class="section-title">填單優先領取・好感獨家優惠名額</h2>
     <div style="text-align:center;">
-      <span class="form-deadline">📅 團購期 6/16 – 6/30</span>
+      <span class="form-deadline">📅 團購期 6/16 – 6/30 ・ 限定前 100 組贈送鋰電池</span>
     </div>
-    <p class="section-intro" style="margin-top:16px;">填單後我們會在 1-2 個工作日內聯繫您安排丈量評估與安裝時程</p>
+    <p class="section-intro" style="margin-top:16px;"><strong style="color:var(--apex-copper-dark);">免費評估・評估通過安裝後再付款</strong>。填單後 1-2 個工作日內 APEX 專員撥電話協助評估丈量。</p>
 
     <form id="apex-form" class="form-wrapper" novalidate>
       <!-- 基本資料 -->
@@ -1231,8 +1244,9 @@
     </form>
 
     <div class="form-success" id="form-success">
-      <h3>✓ 訂單已送出</h3>
-      <p>感謝您的下訂！我們會在 1-2 個工作日內聯繫您安排丈量評估。</p>
+      <h3>✓ 已送出，等候廠商聯繫</h3>
+      <p>感謝您的填單。<strong>APEX 廠商會在 1-2 個工作日內撥電話協助免費評估與丈量</strong>，評估通過、安裝完成後再付款。</p>
+      <p style="margin-top:8px;">請務必加入下方 LINE 以方便聯繫。</p>
     </div>
   </div>
 </section>
@@ -1242,18 +1256,29 @@
   <div class="line-modal-card">
     <button class="line-modal-close" id="line-modal-close" aria-label="關閉">×</button>
     <div class="line-modal-icon">✓</div>
-    <h3 id="line-modal-title">訂單送出成功！</h3>
-    <p class="line-modal-lead">最後一步：加入 <strong>APEX 官方 LINE</strong><br/>我們會在 1-2 個工作日內主動聯繫您安排丈量</p>
+    <h3 id="line-modal-title">送出成功！下一步：免費評估</h3>
+    <p class="line-modal-lead">請加入 <strong>APEX 官方 LINE</strong>，廠商會主動聯繫您<br/><strong style="color:var(--apex-copper-dark);">免費評估・評估通過安裝後再付款</strong></p>
     <ul class="line-modal-list">
+      <li>📞 廠商撥電話協助免費評估</li>
       <li>📋 確認丈量時間與安裝地址</li>
       <li>📷 接收您補拍的門扇照片</li>
       <li>💬 隨時詢問商品 / 安裝問題</li>
-      <li>🎁 第一時間收到好感獨家優惠</li>
     </ul>
+
+    <div class="line-modal-btn-label">① 跟廠商聯絡（必加）</div>
     <a class="line-modal-btn" href="https://line.me/R/ti/p/@apex100" target="_blank" rel="noopener">
       <span class="line-logo">LINE</span>
-      <span>加入 APEX 官方 LINE @apex100</span>
+      <span>加入 APEX 官方 @apex100</span>
     </a>
+    <p class="line-modal-btn-note">由 APEX 專員協助免費評估、丈量與安裝</p>
+
+    <div class="line-modal-btn-label">② 加好感 GLN（領取獨家優惠）</div>
+    <a class="line-modal-btn secondary" href="https://line.me/R/ti/p/@glninterior" target="_blank" rel="noopener">
+      <span class="line-logo">LINE</span>
+      <span>加入 好感 GLN @glninterior</span>
+    </a>
+    <p class="line-modal-btn-note">前 100 組鋰電池加贈名額・好感獨家後續優惠通知</p>
+
     <button class="line-modal-skip" id="line-modal-skip">稍後再加</button>
   </div>
 </div>
@@ -1263,7 +1288,8 @@
   <div class="signature">Good Living Notes × APEX</div>
   <div>Carol 專屬團購・2026 · 6/16 – 6/30</div>
   <div class="contact">
-    <a href="https://line.me/R/ti/p/@apex100" target="_blank" rel="noopener">LINE @apex100</a> ·
+    <a href="https://line.me/R/ti/p/@apex100" target="_blank" rel="noopener">APEX @apex100</a> ·
+    <a href="https://line.me/R/ti/p/@glninterior" target="_blank" rel="noopener">好感 @glninterior</a> ·
     <a href="tel:0800500992">0800-500-992</a> ·
     <a href="mailto:apextww@gmail.com">apextww@gmail.com</a>
   </div>
