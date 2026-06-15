@@ -105,7 +105,7 @@
   .product-section { background: var(--apex-black); color: #E8DDD2; border-bottom: 0; }
   .product-section .section-label { color: var(--apex-copper-light); }
   .product-section .section-title { color: #F4EBE0; }
-  .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 40px; }
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
   .product-card { background: var(--apex-dark); padding: 0; border: 1px solid #3A3530; overflow: hidden; }
   .product-card .product-img { width: 100%; aspect-ratio: 4/5; background: linear-gradient(135deg, #1F1C19 0%, #2D2823 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
   .product-card .product-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -123,6 +123,9 @@
   .product-card .group-price .amount { font-family: 'Ibarra Real Nova', serif; font-size: 32px; color: var(--apex-copper-light); font-weight: 500; }
   .product-card .group-price .currency { font-size: 14px; color: var(--apex-copper-light); }
   .product-card .save { display: inline-block; padding: 4px 12px; background: var(--apex-copper); color: white; font-size: 12px; letter-spacing: 0.05em; }
+  @media (max-width: 960px) {
+    .product-grid { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 720px) {
     .product-grid { grid-template-columns: 1fr; gap: 24px; }
   }
@@ -479,8 +482,8 @@
 <section class="product-section" id="product">
   <div class="container">
     <div class="section-label">Featured Products</div>
-    <h2 class="section-title">兩款銅色旗艦，選你需要的等級</h2>
-    <p class="section-intro" style="color:#C9BFB3;">兩款共用同等級的鎖體（304 不鏽鋼 / C 級鎖芯 / 極靜音全自動），差別在<strong style="color:var(--apex-copper-light);">人臉辨識</strong></p>
+    <h2 class="section-title">三款旗艦選擇，配你的門面與需求</h2>
+    <p class="section-intro" style="color:#C9BFB3;">三款共用同等級鎖體（304 不鏽鋼 / C 級鎖芯 / 極靜音全自動），差別在<strong style="color:var(--apex-copper-light);">人臉辨識</strong>與<strong style="color:var(--apex-copper-light);">外觀顏色</strong></p>
 
     <div class="product-grid">
       <!-- AP100 -->
@@ -490,6 +493,33 @@
         </div>
         <div class="product-body">
           <div class="model">AP100 · 紅古銅</div>
+          <h3>人臉 × 掌靜脈<br/>極靜音電子鎖</h3>
+          <ul class="features">
+            <li>iPhone 等級 3D 人臉辨識（110-200cm）</li>
+            <li>急速掌靜脈辨識，手汗也能用</li>
+            <li>9 種解鎖方式、4.5 吋貓眼螢幕</li>
+            <li>遠端對講、逗留抓拍、Siri 聲控</li>
+            <li>金融級安全芯片、AWS 雲端</li>
+          </ul>
+          <div class="price-block">
+            <div class="orig-price">原價 NT$ 45,000</div>
+            <div class="group-price">
+              <span class="label">Carol 團購</span>
+              <span class="currency">NT$</span>
+              <span class="amount">33,500</span>
+            </div>
+            <span class="save">省 $11,500</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AP100 尊爵黑 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="assets/ap100-black-main.jpg" alt="APEX AP100 尊爵黑" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;placeholder&quot;>AP100 · 黑</div>')" />
+        </div>
+        <div class="product-body">
+          <div class="model">AP100 · 尊爵黑</div>
           <h3>人臉 × 掌靜脈<br/>極靜音電子鎖</h3>
           <ul class="features">
             <li>iPhone 等級 3D 人臉辨識（110-200cm）</li>
@@ -539,7 +569,7 @@
     </div>
 
     <p style="text-align:center; margin-top:36px; font-size:14px; color:#C9BFB3; line-height:1.9;">
-      ✓ 兩款皆含：<strong style="color:var(--apex-copper-light);">安裝</strong>・<strong style="color:var(--apex-copper-light);">保固 3 年</strong>・<strong style="color:var(--apex-copper-light);">鋰電池 1 顆</strong>・<strong style="color:var(--apex-copper-light);">原廠卡 3 張</strong>
+      ✓ 三款皆含：<strong style="color:var(--apex-copper-light);">安裝</strong>・<strong style="color:var(--apex-copper-light);">保固 3 年</strong>・<strong style="color:var(--apex-copper-light);">鋰電池 1 顆</strong>・<strong style="color:var(--apex-copper-light);">原廠卡 3 張</strong>
     </p>
 
     <div class="gift-box">
@@ -887,7 +917,7 @@
     <h2 class="section-title">完整規格</h2>
     <div class="specs-grid">
       <div class="specs-card">
-        <h3>AP100 · 紅古銅</h3>
+        <h3>AP100 <span style="font-size:14px; color:var(--apex-copper-light); font-weight:400; letter-spacing:0;">（紅古銅 / 尊爵黑同規格）</span></h3>
         <table>
           <tr><td>外主機尺寸</td><td>42 × 7 × 5.9 cm</td></tr>
           <tr><td>內主機尺寸</td><td>42 × 8 × 7.7 cm（含手把）</td></tr>
@@ -1081,6 +1111,14 @@
             <input type="radio" name="model" value="AP100" required />
             <span>
               <div class="opt-title">APEX AP100 紅古銅（人臉 + 掌靜脈）</div>
+              <div class="opt-desc">含安裝・保固 3 年・含鋰電池 1 顆・含原廠卡 3 張・贈鋰電池 1 顆 + 鹼性電池 ×4</div>
+              <div class="opt-price">NT$ 33,500 <span style="font-size:13px; color:var(--ink-mute); text-decoration:line-through; margin-left:8px;">$45,000</span></div>
+            </span>
+          </label>
+          <label class="form-option">
+            <input type="radio" name="model" value="AP100-BLACK" required />
+            <span>
+              <div class="opt-title">APEX AP100 尊爵黑（人臉 + 掌靜脈）</div>
               <div class="opt-desc">含安裝・保固 3 年・含鋰電池 1 顆・含原廠卡 3 張・贈鋰電池 1 顆 + 鹼性電池 ×4</div>
               <div class="opt-price">NT$ 33,500 <span style="font-size:13px; color:var(--ink-mute); text-decoration:line-through; margin-left:8px;">$45,000</span></div>
             </span>
